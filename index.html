@@ -11,7 +11,7 @@
     background: #fff;
     color: #000;
     font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    max-width: 42rem;
+    max-width: 50rem;
     margin: 0 auto;
     padding: 4rem 1.25rem 6rem;
   }
@@ -22,92 +22,41 @@
   li { margin-bottom: .3rem; }
   a { color: #000; }
   a:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
-  [id] { scroll-margin-top: 2.5rem; }
-
-  .toc {
-    position: fixed;
-    top: 4.35rem;
-    left: calc(50% + 22rem);
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    font-size: .8rem;
-    line-height: 1.3;
-    max-width: 11rem;
-  }
-  .toc a {
-    color: #999;
-    text-decoration: none;
-    transition: color .15s;
-  }
-  .toc a:hover, .toc a.current { color: #000; }
-  @media (max-width: 1180px) { .toc { display: none; } }
-  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 </style>
 </head>
 <body>
-<nav class="toc" aria-label="Sections">
-  <a href="#investing">Investing</a>
-  <a href="#markets">Markets</a>
-  <a href="#engineering">Engineering</a>
-  <a href="#mentorship">Mentorship</a>
-  <a href="#community">Community</a>
-  <a href="#hiring">Hiring</a>
-  <a href="#education">Education</a>
-  <a href="#find-me">Where you can find me</a>
-</nav>
-
 <h1>Risa Shimmura</h1>
 <p class="tagline">Investor &amp; operator</p>
 
 <p>From Vancouver, Canada. Based in New York &amp; San Francisco.</p>
 
-<p id="investing"><strong>Investing.</strong> I invest in early-stage companies.</p>
+<p><strong>Investing.</strong> I invest in early-stage companies.</p>
 <ul>
   <li><a href="https://www.foresighthealth.ai/">Foresight Health</a> (pre-seed), <a href="https://www.figure.ai/">Figure</a> (Series C), <a href="https://replit.com/">Replit</a> (Series B), + a few more in stealth</li>
   <li>Previously a scout at <a href="https://www.susaventures.com/">Susa Ventures</a>, covering healthcare, AI, infra, and robotics. I sourced <a href="https://www.foresighthealth.ai/">Foresight Health</a>, which Susa went on to lead at pre-seed and seed</li>
 </ul>
 
-<p id="markets"><strong>Markets.</strong> Consumer internet L/S at a Thrive-seeded hedge fund. M&amp;A at Citi.</p>
+<p><strong>Markets.</strong> Consumer internet L/S at a Thrive-seeded hedge fund. M&amp;A at Citi.</p>
 
-<p id="engineering"><strong>Engineering.</strong> I wrote smart contracts and worked on blockchain infrastructure at Binance from 2022 to 2024.</p>
+<p><strong>Engineering.</strong> I wrote smart contracts and worked on blockchain infrastructure at Binance from 2022 to 2024.</p>
 
-<p id="mentorship"><strong>Mentorship.</strong> Every single thing I've been able to do is owed to people who were generous with me when they had no reason to be. I take paying that back seriously.</p>
+<p><strong>Mentorship.</strong> Every single thing I've been able to do is owed to people who were generous with me when they had no reason to be. I take paying that back seriously.</p>
 <ul>
   <li>Finance lead at <a href="https://www.womeninnetwork.us/">Women in Network</a>, helping women break into VC, PE, and IB</li>
   <li>I'm always willing to take a chat — DM me on <a href="https://x.com/risashimmura">X</a> or <a href="https://www.linkedin.com/in/risashimmura/">LinkedIn</a></li>
 </ul>
 
-<p id="community"><strong>Community.</strong> NYC chapter lead at <a href="https://collective-join.com/">The Collective</a>. Monthly dinners for the ten smartest founders I can find, poker nights for founders and engineers, a talent network for everyone else, and plenty in between.</p>
+<p><strong>Community.</strong> NYC chapter lead at <a href="https://collective-join.com/">The Collective</a>. Monthly dinners for the ten smartest founders I can find, poker nights for founders and engineers, a talent network for everyone else, and plenty in between.</p>
 
-<p id="hiring"><strong>Hiring.</strong> I hire a lot, and I'm not looking for average. If that's you, send me your resume at my <a href="https://talent-inbox.onrender.com/">talent inbox</a>.</p>
+<p><strong>Hiring.</strong> I hire a lot, and I'm not looking for average. If that's you, send me your resume at my <a href="https://talent-inbox.onrender.com/">talent inbox</a>.</p>
 
-<p id="education"><strong>Education.</strong> UC Berkeley, Haas School of Business. Regents' &amp; Chancellor's Scholar — 1 of 2 international scholars, top 0.12% of applicants.</p>
+<p><strong>Education.</strong> UC Berkeley, Haas School of Business. Regents' &amp; Chancellor's Scholar — 1 of 2 international scholars, top 0.12% of applicants.</p>
 
-<p id="find-me"><strong>Where you can find me.</strong></p>
+<p><strong>Where you can find me.</strong></p>
 <ul>
   <li><a href="https://x.com/risashimmura">X</a> — @risashimmura, DMs open</li>
   <li><a href="https://www.linkedin.com/in/risashimmura/">LinkedIn</a> — /in/risashimmura</li>
   <li><a href="https://talent-inbox.onrender.com/">Talent inbox</a> — send me your resume</li>
 </ul>
-
-<script>
-(function () {
-  var links = [].slice.call(document.querySelectorAll('.toc a'));
-  var map = {};
-  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-  var seen = {};
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { seen[e.target.id] = e.isIntersecting; });
-    var active = Object.keys(map).filter(function (id) { return seen[id]; })[0];
-    links.forEach(function (a) { a.classList.remove('current'); });
-    if (active) { map[active].classList.add('current'); }
-  }, { rootMargin: '-10% 0px -70% 0px' });
-  Object.keys(map).forEach(function (id) {
-    var el = document.getElementById(id);
-    if (el) { obs.observe(el); }
-  });
-})();
-</script>
 </body>
 </html>
