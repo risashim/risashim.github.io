@@ -23,6 +23,15 @@
   p { margin: 0 0 1.1rem; }
   a { color: #000; }
   a:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+  .pagehead { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem 2rem; flex-wrap: wrap; }
+  .nominate {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: .45rem .95rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .nominate:hover { background: #000; color: #fff; }
   .photos { max-width: 46rem; }
   figure { margin: 0 0 2.4rem; }
   figure img { display: block; width: 100%; height: auto; }
@@ -31,9 +40,14 @@
 </style>
 </head>
 <body>
-<h1>Dinners</h1>
-<p class="tagline">Monthly, invite-only.</p>
-<p class="links"><a href="/">&larr; Risa Shimmura</a></p>
+<div class="pagehead">
+  <div>
+    <h1>Dinners</h1>
+    <p class="tagline">Monthly, invite-only.</p>
+    <p class="links"><a href="/">&larr; Risa Shimmura</a></p>
+  </div>
+  <a class="nominate" href="https://talent-inbox.onrender.com/nominate">Nominate a founder</a>
+</div>
 
 <div class="photos">
   <figure>
